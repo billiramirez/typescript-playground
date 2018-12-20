@@ -96,3 +96,25 @@ let complex2: Complex = {
         return this.data;
     }
 };
+
+// union types
+
+let myRalRealAge: string | number = 27;   //this could take more type
+myRalRealAge = "32";
+// myRalRealAge = true;  => wrong
+
+// check types
+let finalValue = "hola";
+if(typeof finalValue == "string"){console.log('number');}
+
+// never type
+
+function neverReturn(): never{
+    throw new Error('error');
+}
+
+
+// nullable values
+
+let canBenNull: number | null = 12;
+canBenNull = null;
