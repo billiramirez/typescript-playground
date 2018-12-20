@@ -78,9 +78,19 @@ let userData: {name: string, age: number} = {
 //     b: 23
 // }  => wrong
 
-
+// complex objects
 
 let complex : {data: number[], output:(all: boolean) => number[]} ={
+    data: [100, 3.99, 10],
+    output: function(all: boolean): number[]{
+        return this.data;
+    }
+};
+
+// alias and complex objects
+type Complex =  {data: number[], output:(all: boolean) => number[]};
+
+let complex2: Complex = {
     data: [100, 3.99, 10],
     output: function(all: boolean): number[]{
         return this.data;
