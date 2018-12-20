@@ -44,4 +44,10 @@ function sayHello() {
 function multiply(value1, value2) {
     return value1 * value2;
 }
+// console.log(multiply(2, 's'));  => wrong
 console.log(multiply(2, 4));
+// function types
+var myMultiply;
+// this is a function type, takin the multiply format.
+myMultiply = multiply;
+console.log(myMultiply(2, 3));
