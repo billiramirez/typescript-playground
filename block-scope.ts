@@ -35,3 +35,17 @@ const coundown = (start: number = 24) : void =>{
     }
     console.log(start);
 }
+
+// the rest and spread operator
+console.log('Rest and spread');
+console.log('spread...');
+const numbers = [23,434 ,34, -2];
+console.log(Math.max(23, 45, 53, 5));
+console.log(Math.max(...numbers));
+
+console.log('rest...');
+function makeArray(...args: number[]){
+    return args;
+}
+console.log(makeArray(1, 4, 5));
+
