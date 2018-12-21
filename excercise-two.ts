@@ -10,11 +10,11 @@ greet("Anna");
  
 // Exercise 3 - Isn't there a shorter way to get all these Values?
 const numberss = [-3, 33, 38, 5];
-console.log(Math.min.apply(Math, [...numberss]));
+console.log(Math.min(...numberss));
  
 // Exercise 4 - I have to think about Exercise 3 ...
 let newArray = [55, 20];
-newArray = [...numberss];
+newArray.push(...numberss);
 console.log(newArray);
  
 // Exercise 5 - That's a well-constructed array.
