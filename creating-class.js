@@ -46,3 +46,43 @@ var Max = /** @class */ (function (_super) {
 }(Person));
 var max = new Max("anaaa");
 console.log(max);
+// getters and setters
+var Plant = /** @class */ (function () {
+    function Plant() {
+        this._species = "default";
+    }
+    Object.defineProperty(Plant.prototype, "species", {
+        get: function () {
+            return this._species;
+        },
+        set: function (value) {
+            if (value.length > 3) {
+                this._species = value;
+            }
+            else {
+                this._species = "default";
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return Plant;
+}());
+var plant = new Plant();
+console.log(plant.species);
+// plant.species("AB");
+// console.log(plant.species);
+// plant.species("sssss");
+// console.log(plant.species);
+// Statics properties and methods
+var Helpers = /** @class */ (function () {
+    function Helpers() {
+    }
+    Helpers.calcCircunference = function (diameter) {
+        return this.PI * diameter;
+    };
+    Helpers.PI = 3.14;
+    return Helpers;
+}());
+console.log(Helpers.PI);
+console.log(Helpers.calcCircunference(3));
