@@ -49,3 +49,23 @@ function makeArray(...args: number[]){
 }
 console.log(makeArray(1, 4, 5));
 
+// destructoring arrays
+console.log('destructuring arrays...');
+const myHobbies = ["singing", "playing the piano"];
+const [h1, h2] = myHobbies;
+console.log(h1, h2);
+
+// destructoring objects
+console.log('destructuring objects...');
+const userPersonalData = {firstName:'billi', age:34};
+const {firstName, age} = userPersonalData;
+console.log(firstName, age);
+
+// template literals
+console.log('template literals...');
+const mySupername = "Billi";
+const greetings = `Hello ${mySupername}
+I wanna make a request to the endpoint
+`;
+console.log(greetings);
+

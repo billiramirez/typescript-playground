@@ -43,3 +43,18 @@ function makeArray() {
     return args;
 }
 console.log(makeArray(1, 4, 5));
+// destructoring arrays
+console.log('destructuring arrays...');
+var myHobbies = ["singing", "playing the piano"];
+var h1 = myHobbies[0], h2 = myHobbies[1];
+console.log(h1, h2);
+// destructoring objects
+console.log('destructuring objects...');
+var userPersonalData = { firstName: 'billi', age: 34 };
+var firstName = userPersonalData.firstName, age = userPersonalData.age;
+console.log(firstName, age);
+// template literals
+console.log('template literals...');
+var mySupername = "Billi";
+var greetings = "Hello " + mySupername + "\nI wanna make a request to the endpoint\n";
+console.log(greetings);
