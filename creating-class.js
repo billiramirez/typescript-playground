@@ -1,12 +1,27 @@
 "use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var Person = /** @class */ (function () {
     function Person(name, userName) {
         this.userName = userName;
+        this.type = "";
         this.age = 15;
         this.name = name;
     }
     Person.prototype.printAge = function () {
         console.log(this.age);
+        this.setType("admin");
     };
     Person.prototype.setType = function (type) {
         this.type = type;
@@ -17,4 +32,15 @@ var Person = /** @class */ (function () {
 var person = new Person("billi", "salmonelopan");
 console.log(person.name, person.userName);
 person.printAge();
-person.setType("admin");
+// person.setType("admin"); won't work cause is private
+// inheritance
+var Max = /** @class */ (function (_super) {
+    __extends(Max, _super);
+    // name = "Billi";
+    function Max(username) {
+        return _super.call(this, "Alex", username) || this;
+    }
+    return Max;
+}(Person));
+var max = new Max("anaaa");
+console.log(max);

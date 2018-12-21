@@ -1,6 +1,6 @@
 class Person {
     name: string;
-    private type: string;
+    private type: string = "";
     protected age: number = 15;
     
     constructor(name: string, public userName: string){
@@ -26,3 +26,14 @@ person.printAge();
 // person.setType("admin"); won't work cause is private
 
 
+// inheritance
+
+class Max extends Person {
+    // name = "Billi";
+    constructor(username: string){
+        super("Alex", username);
+    }
+}
+
+const max = new Max("anaaa");
+console.log(max);
