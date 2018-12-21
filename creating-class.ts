@@ -1,3 +1,6 @@
+// classes
+console.log('classes');
+
 class Person {
     name: string;
     private type: string = "";
@@ -27,6 +30,7 @@ person.printAge();
 
 
 // inheritance
+console.log('inheritance');
 
 class Max extends Person {
     // name = "Billi";
@@ -41,6 +45,7 @@ console.log(max);
 
 
 // getters and setters
+console.log('getters and setters');
 
 class Plant {
     private _species: string = "default";
@@ -71,6 +76,7 @@ console.log(plant.species);
 
 
 // Statics properties and methods
+console.log('Statics properties and methods');
 
 class Helpers{
     static PI: number = 3.14;
@@ -81,3 +87,29 @@ class Helpers{
 }
 console.log(2 * Helpers.PI);
 console.log(Helpers.calcCircunference(3));
+
+// Abstract classes
+console.log('Abstract classes');
+
+abstract class Project{
+    projectName: string = "default";
+    budget: number = 13;
+
+    abstract changeName(name: string): void;
+
+    calcBudget(){
+        return this.budget * 2;
+    }
+
+}
+
+class ItProject extends Project{
+    changeName(name: string): void {
+        this.projectName = name;
+    }
+}
+
+let newProject = new ItProject();
+console.log(newProject);
+newProject.changeName("super it project");
+console.log(newProject);

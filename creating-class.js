@@ -12,6 +12,8 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+// classes
+console.log('classes');
 var Person = /** @class */ (function () {
     function Person(name, userName) {
         this.userName = userName;
@@ -34,6 +36,7 @@ console.log(person.name, person.userName);
 person.printAge();
 // person.setType("admin"); won't work cause is private
 // inheritance
+console.log('inheritance');
 var Max = /** @class */ (function (_super) {
     __extends(Max, _super);
     // name = "Billi";
@@ -47,6 +50,7 @@ var Max = /** @class */ (function (_super) {
 var max = new Max("anaaa");
 console.log(max);
 // getters and setters
+console.log('getters and setters');
 var Plant = /** @class */ (function () {
     function Plant() {
         this._species = "default";
@@ -75,6 +79,7 @@ console.log(plant.species);
 // plant.species("sssss");
 // console.log(plant.species);
 // Statics properties and methods
+console.log('Statics properties and methods');
 var Helpers = /** @class */ (function () {
     function Helpers() {
     }
@@ -84,5 +89,30 @@ var Helpers = /** @class */ (function () {
     Helpers.PI = 3.14;
     return Helpers;
 }());
-console.log(Helpers.PI);
+console.log(2 * Helpers.PI);
 console.log(Helpers.calcCircunference(3));
+// Abstract classes
+console.log('Abstract classes');
+var Project = /** @class */ (function () {
+    function Project() {
+        this.projectName = "default";
+    }
+    Project.prototype.calcBudget = function () {
+        return this.budget * 2;
+    };
+    return Project;
+}());
+var ItProject = /** @class */ (function (_super) {
+    __extends(ItProject, _super);
+    function ItProject() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    ItProject.prototype.changeName = function (name) {
+        this.projectName = name;
+    };
+    return ItProject;
+}(Project));
+var newProject = new ItProject();
+console.log(newProject);
+newProject.changeName("super it project");
+console.log(newProject);
