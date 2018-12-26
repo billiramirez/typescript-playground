@@ -44,7 +44,7 @@ const max = new Max("anaaa");
 console.log(max);
 
 
-// getters and setters
+// getters and setters => GET && SET
 console.log('getters and setters');
 
 class Plant {
@@ -65,10 +65,9 @@ class Plant {
 
 
 let plant = new Plant();
+console.log(plant.species); //=> this is how we GET the value in the class
+plant.species = "Green Plant"; //=> this is how we SET the value in the class
 console.log(plant.species);
-
-// plant.species("AB");
-// console.log(plant.species);
 
 
 // plant.species("sssss");
@@ -76,17 +75,18 @@ console.log(plant.species);
 
 
 // Statics properties and methods
+// without instance it the class we can use a value or methods from a class, writing static before the declaration 
 console.log('Statics properties and methods');
 
 class Helpers{
     static PI: number = 3.14;
 
-    static calcCircunference(diameter:number): number{
+    static calcCircumference(diameter:number): number{
         return this.PI * diameter;
     }
 }
 console.log(2 * Helpers.PI);
-console.log(Helpers.calcCircunference(3));
+console.log(Helpers.calcCircumference(3));
 
 // Abstract classes
 console.log('Abstract classes');
