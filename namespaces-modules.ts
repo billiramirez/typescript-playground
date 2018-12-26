@@ -10,5 +10,7 @@
 // tsc namespaces-modules.ts --outfile namespaces-modules.js
 // this command is when using the references way
 
-console.log(MyMath.calculateCircumference(33));
+import CircleMath =  MyMath.Circle;
+
 console.log(MyMath.calculateRectangle(23,423));
+console.log(CircleMath.calculateCircumference(33));

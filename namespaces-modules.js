@@ -1,10 +1,13 @@
 var MyMath;
 (function (MyMath) {
-    var PI = 3.1416;
-    function calculateCircumference(diameter) {
-        return diameter * PI;
-    }
-    MyMath.calculateCircumference = calculateCircumference;
+    var Circle;
+    (function (Circle) {
+        var PI = 3.1416;
+        function calculateCircumference(diameter) {
+            return diameter * PI;
+        }
+        Circle.calculateCircumference = calculateCircumference;
+    })(Circle = MyMath.Circle || (MyMath.Circle = {}));
 })(MyMath || (MyMath = {}));
 var MyMath;
 (function (MyMath) {
@@ -19,5 +22,8 @@ var MyMath;
 // typescript has its own way to import namespaces.
 /// <reference path="circumferenceMath.ts"/>
 /// <reference path="rectangleMath.ts"/>
-console.log(MyMath.calculateCircumference(33));
+// tsc namespaces-modules.ts --outfile namespaces-modules.js
+// this command is when using the references way
+var CircleMath = MyMath.Circle;
 console.log(MyMath.calculateRectangle(23, 423));
+console.log(CircleMath.calculateCircumference(33));
