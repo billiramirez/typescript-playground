@@ -113,3 +113,24 @@ let newProject = new ItProject();
 console.log(newProject);
 newProject.changeName("super it project");
 console.log(newProject);
+
+
+// Private Constructor
+
+class OnlyOne{
+    private static instance: OnlyOne;
+    private constructor(public readonly name: string) {}
+
+    static getInstance(){
+        if(!OnlyOne.instance){
+            OnlyOne.instance = new OnlyOne('The only one');
+        }
+
+        return OnlyOne.instance;
+    }
+}
+
+// let wrong  = new OnlyOne('The only one');
+let right = OnlyOne.getInstance();
+console.log(right.name);
+// right.name = "hellooo";  this cannot be used cause is readonly property

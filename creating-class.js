@@ -49,7 +49,7 @@ var Max = /** @class */ (function (_super) {
 }(Person));
 var max = new Max("anaaa");
 console.log(max);
-// getters and setters
+// getters and setters => GET && SET
 console.log('getters and setters');
 var Plant = /** @class */ (function () {
     function Plant() {
@@ -73,29 +73,31 @@ var Plant = /** @class */ (function () {
     return Plant;
 }());
 var plant = new Plant();
+console.log(plant.species); //=> this is how we GET the value in the class
+plant.species = "Green Plant"; //=> this is how we SET the value in the class
 console.log(plant.species);
-// plant.species("AB");
-// console.log(plant.species);
 // plant.species("sssss");
 // console.log(plant.species);
 // Statics properties and methods
+// without instance it the class we can use a value or methods from a class, writing static before the declaration 
 console.log('Statics properties and methods');
 var Helpers = /** @class */ (function () {
     function Helpers() {
     }
-    Helpers.calcCircunference = function (diameter) {
+    Helpers.calcCircumference = function (diameter) {
         return this.PI * diameter;
     };
     Helpers.PI = 3.14;
     return Helpers;
 }());
 console.log(2 * Helpers.PI);
-console.log(Helpers.calcCircunference(3));
+console.log(Helpers.calcCircumference(3));
 // Abstract classes
 console.log('Abstract classes');
 var Project = /** @class */ (function () {
     function Project() {
         this.projectName = "default";
+        this.budget = 13;
     }
     Project.prototype.calcBudget = function () {
         return this.budget * 2;
@@ -116,3 +118,20 @@ var newProject = new ItProject();
 console.log(newProject);
 newProject.changeName("super it project");
 console.log(newProject);
+// Private Constructor
+var OnlyOne = /** @class */ (function () {
+    function OnlyOne(name) {
+        this.name = name;
+    }
+    OnlyOne.getInstance = function () {
+        if (!OnlyOne.instance) {
+            OnlyOne.instance = new OnlyOne('The only one');
+        }
+        return OnlyOne.instance;
+    };
+    return OnlyOne;
+}());
+// let wrong  = new OnlyOne('The only one');
+var right = OnlyOne.getInstance();
+console.log(right.name);
+// right.name = "hellooo";  this cannot be used cause is readonly property
