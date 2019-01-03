@@ -27,3 +27,12 @@ const testResult: Array<number> = [1.94, 2.33];
 testResult.push(-2.33);
 // testResult.push("sss"); this will throw an error
 
+
+// Arrays
+
+function printAll<T>(args: T[]){
+    args.forEach(a => console.log(a));
+}
+
+printAll<string>(["banana", "apple"]);
+
