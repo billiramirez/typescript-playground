@@ -36,3 +36,10 @@ function printAll<T>(args: T[]){
 
 printAll<string>(["banana", "apple"]);
 
+
+// Generic types
+
+const echo2: <T>(data: T) => T = betterEcho;
+
+console.log(echo2<string>("hello there"));
+
