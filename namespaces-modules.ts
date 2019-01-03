@@ -9,8 +9,16 @@
 /// <reference path="rectangleMath.ts"/>
 // tsc namespaces-modules.ts --outfile namespaces-modules.js
 // this command is when using the references way
+console.log('NAMESPACES...');
 
 import CircleMath =  MyMath.Circle;
 
 console.log(MyMath.calculateRectangle(23,423));
 console.log(CircleMath.calculateCircumference(33));
+
+
+// MODULES
+console.log('MODULES...');
+import {PI, calCircumference} from './Math/circle';
+console.log('PI from Math/Circle', PI);
+console.log('calCircumference', calCircumference);
